@@ -59,21 +59,20 @@ form {
 
 .btn {
   cursor: pointer;
-  width: 100px;
-  margin: 10px;
-  color: pink;
-  background-color: purple;
-  border-color: yellow;
-  border-width: 3px;
 }
 
-.btn:hover {
+.large-btn:hover {
   background-color: red;
   opacity: 0.7;
 }
 
 .large-btn {
   width: 80%;
+  margin: 10px;
+  color: pink;
+  background-color: purple;
+  border-color: yellow;
+  border-width: 3px;
   font-size: 1.5rem;
   font-weight: 900;
   align-self: center;
