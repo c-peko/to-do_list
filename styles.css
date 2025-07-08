@@ -59,22 +59,29 @@ form {
 
 .btn {
   cursor: pointer;
-  background: 0;
-  border: 0;
-  padding: 0;
-  color: inherit;
+  width: 100px;
+  margin: 10px;
+  color: pink;
+  background-color: purple;
+  border-color: yellow;
+  border-width: 3px;
 }
 
-.btn.create {
+.btn:hover {
+  background-color: red;
+  opacity: 0.7;
+}
+
+.large-btn {
+  width: 80%;
   font-size: 1.5rem;
   font-weight: 900;
-  margin-right: 0.25em;
+  align-self: center;
+  justify-self: center;
   transition: opacity 250ms ease-in;
 }
 
-.btn.create:hover {
-  opacity: 0.7;
-}
+
 
 .btn.delete {
   opacity: 0.7;
