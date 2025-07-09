@@ -6,10 +6,6 @@ body {
   font-size: 1.5rem;
   background-color: blue;
   color: red;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem;
 }
 
 header{
@@ -23,6 +19,8 @@ header{
   gap: 20px;
   align-items: flex-start;
   flex-wrap: nowrap; /* Prevent stacking on larger screens */
+  justify-content: center;
+  padding: 2rem;
 }
 
 .reminder-lists,
