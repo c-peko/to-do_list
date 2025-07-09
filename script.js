@@ -9,3 +9,4 @@ addBtn.addEventListener('click', () => {
 
   reminderList.appendChild(newInput);
 });
+
