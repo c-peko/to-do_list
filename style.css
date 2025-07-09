@@ -23,6 +23,15 @@ header{
   padding: 2rem;
 }
 
+.list-header,
+.todo-header{
+  padding: 2rem;
+  background-color: green;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
 .reminder-lists,
 .todo-items {
   background: #fff;
