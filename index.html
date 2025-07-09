@@ -7,28 +7,18 @@
 </head>
 <body>
 
- <div class="all-tasks">
-      <h2 class="task-list-title">My lists</h2>
-      <ul class="task-list">
-        <li class="list-name active-list">Reminders</li>
-      </ul>
-
-      <form action="">
-        <input 
-          type="text"
-          class="new list"
-          placeholder="new list name"
-          aria-label="new list name"
-        />
-        <button class="btn create" aria-label="create new list">+</button>
-      </form>
+ <div class="container">
+    <div class="reminder-lists">
+      <h3>Reminder Lists</h3>
+      <ul id="list-names"></ul>
+      <button id="add-list-btn">+ Add List</button>
     </div>
 
-  <h2>📝 Reminder List</h2>
-  <button id="add-btn">+ Add Reminder</button>
-
-  <div id="reminder-list">
-    <!-- New reminder inputs will appear here -->
+    <div class="todo-items">
+      <h3 id="list-title">Select a list</h3>
+      <ul id="todo-list"></ul>
+      <button id="add-task-btn" disabled>+ Add Task</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
