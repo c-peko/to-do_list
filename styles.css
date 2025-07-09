@@ -172,6 +172,7 @@ form {
 }
 
 .task-count {
+  text-align: center;
   margin: 0;
   font-size: 1rem;
 }
