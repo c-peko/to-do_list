@@ -30,7 +30,7 @@ header{
   display: flex;
   align-items: flex-start;
   flex-wrap: nowrap;
-  justfy-content:space-between;
+  justify-content:space-between;
 }
 
 .reminder-lists,
