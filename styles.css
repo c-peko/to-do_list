@@ -6,8 +6,10 @@ body {
   font-size: 1.5rem;
   background-color: blue;
   color: red;
-  display: grid;
-  grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
 }
 
 
