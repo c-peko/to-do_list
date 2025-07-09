@@ -24,7 +24,7 @@ header{
 }
 
 .list-header,
-.todo-header{
+.todo-header {
   padding: 2rem;
   background-color: green;
   display: flex;
