@@ -12,9 +12,8 @@ body {
 
 
 .container {
-  display: flex;
+  display: grid;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .reminder-lists,
