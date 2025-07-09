@@ -12,6 +12,11 @@ body {
   padding: 2rem;
 }
 
+header{
+  padding: 2rem;
+  background-color: green;
+  justify-content: center;
+}
 
 .container {
   display: flex;
