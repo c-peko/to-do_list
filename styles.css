@@ -18,7 +18,7 @@ header{
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  flex-wrap: nowrap; /* Prevent stacking on larger screens */
+  flex-wrap: wrap; /* Prevent stacking on larger screens */
   justify-content: center;
   padding: 2rem;
 }
