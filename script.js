@@ -203,7 +203,7 @@ renderListNames();
 
 function showInlineInput({ containerId, placeholder, onSubmit }) {
   const container = document.getElementById(containerId);
-  container.innerHTML = ''; // clear previous
+  container.innerHTML = ''; // clear previous input
 
   const wrapper = document.createElement('div');
   wrapper.className = 'input-row';
@@ -218,22 +218,32 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
   const cancelBtn = document.createElement('button');
   cancelBtn.textContent = '❌';
 
-  addBtn.addEventListener('click', () => {
+  // Submit action
+  const submit = () => {
     const value = input.value.trim();
     if (value) onSubmit(value);
     container.innerHTML = '';
-  });
+  };
 
-  cancelBtn.addEventListener('click', () => {
+  // Cancel action
+  const cancel = () => {
     container.innerHTML = '';
+  };
+
+  addBtn.addEventListener('click', submit);
+  cancelBtn.addEventListener('click', cancel);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') submit();
   });
 
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      const value = input.value.trim();
-      if (value) onSubmit(value);
-      container.innerHTML = '';
-    }
+  // ✅ Auto-close on blur (click outside)
+  input.addEventListener('blur', () => {
+    // Timeout needed to allow button click to register before removing
+    setTimeout(() => {
+      if (!container.contains(document.activeElement)) {
+        cancel();
+      }
+    }, 100);
   });
 
   wrapper.appendChild(input);
@@ -243,4 +253,3 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
 
   input.focus();
 }
-
