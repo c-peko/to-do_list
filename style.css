@@ -11,7 +11,7 @@ body {
 header{
   padding: 2rem;
   background-color: green;
-  justify-content: center;
+  align-items: center;
 }
 
 .container {
