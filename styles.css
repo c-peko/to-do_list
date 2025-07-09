@@ -34,6 +34,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #fafafa;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .task {
@@ -50,7 +53,8 @@ button {
   font-size: 14px;
 }
 
-.task-actions {
+.task-actions,
+.list-actions {
   display: flex;
   gap: 5px;
 }
@@ -59,7 +63,10 @@ input[type="checkbox"] {
   transform: scale(1.2);
 }
 
-/* ✅ Responsive Design */
+li.dragging {
+  opacity: 0.5;
+}
+
 @media (max-width: 700px) {
   .container {
     flex-direction: column;
