@@ -39,6 +39,24 @@ li {
   border-radius: 5px;
 }
 
+.input-row {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.input-row button {
+  padding: 8px;
+  font-size: 14px;
+}
+
+
 .task {
   display: flex;
   align-items: center;
