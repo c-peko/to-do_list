@@ -8,21 +8,32 @@ let lists = JSON.parse(localStorage.getItem('lists')) || {};
 let selectedList = null;
 
 addListBtn.addEventListener('click', () => {
-  const listName = prompt('Enter new list name:');
-  if (listName && !lists[listName]) {
-    lists[listName] = [];
-    saveAndRender();
-  }
+  showInlineInput({
+    containerId: 'list-input-row',
+    placeholder: 'New list name...',
+    onSubmit: (listName) => {
+      if (listName && !lists[listName]) {
+        lists[listName] = [];
+        saveAndRender();
+      }
+    }
+  });
 });
 
 addTaskBtn.addEventListener('click', () => {
   if (!selectedList) return;
-  const task = prompt(`Add a task to "${selectedList}":`);
-  if (task) {
-    lists[selectedList].push({ text: task, done: false });
-    saveAndRender();
-  }
+  showInlineInput({
+    containerId: 'task-input-row',
+    placeholder: 'New task...',
+    onSubmit: (taskText) => {
+      if (taskText) {
+        lists[selectedList].push({ text: taskText, done: false });
+        saveAndRender();
+      }
+    }
+  });
 });
+
 
 function saveAndRender() {
   localStorage.setItem('lists', JSON.stringify(lists));
@@ -189,3 +200,47 @@ function updateTaskOrder() {
 }
 
 renderListNames();
+
+function showInlineInput({ containerId, placeholder, onSubmit }) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ''; // clear previous
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'input-row';
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = placeholder;
+
+  const addBtn = document.createElement('button');
+  addBtn.textContent = '✅';
+
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = '❌';
+
+  addBtn.addEventListener('click', () => {
+    const value = input.value.trim();
+    if (value) onSubmit(value);
+    container.innerHTML = '';
+  });
+
+  cancelBtn.addEventListener('click', () => {
+    container.innerHTML = '';
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const value = input.value.trim();
+      if (value) onSubmit(value);
+      container.innerHTML = '';
+    }
+  });
+
+  wrapper.appendChild(input);
+  wrapper.appendChild(addBtn);
+  wrapper.appendChild(cancelBtn);
+  container.appendChild(wrapper);
+
+  input.focus();
+}
+
