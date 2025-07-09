@@ -218,8 +218,12 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
     container.innerHTML = '';
   });
 
-  // Submit logic
+  let submitted = false; // ✅ Prevent duplicate submits
+
   const submit = () => {
+    if (submitted) return; // ✅ Skip if already submitted
+    submitted = true;
+
     const value = input.value.trim();
     if (value) onSubmit(value);
     container.innerHTML = '';
@@ -232,10 +236,9 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
     }
   });
 
-  // Submit on blur (clicking outside)
+  // Submit on blur
   input.addEventListener('blur', () => {
     setTimeout(() => {
-      // Avoid conflict with cancel button click
       if (!container.contains(document.activeElement)) {
         submit();
       }
@@ -248,4 +251,3 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
 
   input.focus();
 }
-
