@@ -12,8 +12,10 @@ body {
 
 
 .container {
-  display: grid;
+  display: flex;
   gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* Prevent stacking on larger screens */
 }
 
 .reminder-lists,
@@ -21,8 +23,9 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  width: 50%; /* side-by-side split */
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  min-width: 280px; /* for small screens */
 }
 
 h3 {
