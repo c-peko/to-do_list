@@ -3,6 +3,25 @@ body {
   padding: 20px;
 }
 
+.all-tasks {
+  grid-area: lists;
+}
+
+.task-list {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+}
+
+.list-name {
+  cursor: pointer;
+}
+
+.list-name:hover {
+  opacity: 0.7;
+}
+
 #reminder-list {
   margin-top: 20px;
 }
