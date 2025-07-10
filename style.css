@@ -1,4 +1,3 @@
-b
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
@@ -100,9 +99,33 @@ button {
   gap: 5px;
 }
 
-input[type="checkbox"] {
-  transform: scale(1.2);
+.round-checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;          /* Remove browser default */
+  border: 2px solid #666;
+  border-radius: 50%;        /* Make it a circle */
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  transition: all 0.2s ease;
 }
+
+.round-checkbox:checked {
+  background-color: #4caf50; /* Green when checked */
+}
+
+.round-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
 
 li.dragging {
   opacity: 0.5;
