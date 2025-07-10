@@ -86,12 +86,28 @@ li {
   flex-grow: 1;
 }
 
-button {
-  margin-top: 10px;
-  padding: 8px 12px;
+.icon-btn {
+  background-color: #fff;
+  border: none;
   cursor: pointer;
-  font-size: 14px;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
+
+.icon-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.icon-btn .material-icons {
+  font-size: 24px;
+  color: #223e5b;
+}
+
 
 .task-actions,
 .list-actions {
