@@ -109,12 +109,14 @@ function renderTodoItems() {
     taskContainer.className = 'task';
 
     const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.checked = task.done;
-    checkbox.addEventListener('change', () => {
-      task.done = checkbox.checked;
-      saveAndRender();
-    });
+checkbox.type = 'checkbox';
+checkbox.checked = task.done;
+checkbox.classList.add('round-checkbox'); // ✅ Add a custom class
+
+checkbox.addEventListener('change', () => {
+  task.done = checkbox.checked;
+  saveAndRender();
+});
 
     const span = document.createElement('span');
     span.textContent = task.text;
