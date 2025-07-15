@@ -66,7 +66,7 @@ function renderListNames() {
     actions.className = 'list-actions';
 
     const editBtn = document.createElement('button');
-    editBtn.textContent = '✏️';
+    editBtn.textContent = '<span class="material-icons">edit</span>';
     editBtn.addEventListener('click', () => {
       const newName = prompt('Rename list:', name);
       if (newName && newName !== name && !lists[newName]) {
@@ -78,7 +78,7 @@ function renderListNames() {
     });
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '🗑️';
+    deleteBtn.textContent = '<span class="material-icons">delete</span>';
     deleteBtn.addEventListener('click', () => {
       if (confirm(`Delete list "${name}"?`)) {
         delete lists[name];
@@ -215,7 +215,7 @@ function showInlineInput({ containerId, placeholder, onSubmit }) {
   input.placeholder = placeholder;
 
   const cancelBtn = document.createElement('button');
-  cancelBtn.textContent = '❌';
+  cancelBtn.textContent = '<span class="material-icons">cancel</span>';
   cancelBtn.addEventListener('click', () => {
     container.innerHTML = '';
   });
